@@ -49,9 +49,10 @@ require("plugins.conform")
 require("plugins.gitsigns")
 
 -- Theme
+require("vscode.colors").get_colors()
 require("vscode").setup({
 	style = "light",
-	italic_comments = true,
+	underline_links = true,
 })
 
-require("vscode").load()
+vim.cmd.colorscheme("vscode")

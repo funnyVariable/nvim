@@ -35,13 +35,9 @@ require("lazy").setup({
 		{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 		{ "stevearc/conform.nvim" },
-    {"nvim-tree/nvim-web-devicons"},
-    {"lewis6991/gitsigns.nvim"},
-
-		{
-			"nvim-treesitter/nvim-treesitter",
-			build = ":TSUpdate",
-		},
+		{ "nvim-tree/nvim-web-devicons" },
+		{ "lewis6991/gitsigns.nvim" },
+		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },

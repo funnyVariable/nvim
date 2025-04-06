@@ -5,3 +5,6 @@ vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Tele
 vim.keymap.set("n", "<leader>r", function()
 	require("conform").format()
 end)
+
+-- GitSigns
+vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")

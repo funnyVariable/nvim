@@ -38,6 +38,14 @@ require("lazy").setup({
 		{ "nvim-tree/nvim-web-devicons" },
 		{ "lewis6991/gitsigns.nvim" },
 		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+		{
+			"romgrk/barbar.nvim",
+			init = function()
+				vim.g.barbar_auto_setup = false
+			end,
+			opts = {},
+		},
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },

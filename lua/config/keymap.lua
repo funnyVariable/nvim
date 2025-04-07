@@ -2,7 +2,7 @@ vim.keymap.set("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Tel
 vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
 
 -- Format
-vim.keymap.set("n", "<leader>r", function()
+vim.keymap.set("n", "F", function()
   require("conform").format()
 end)
 
@@ -35,3 +35,18 @@ vim.keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>")
 vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>")
 
 ---- Buffers End ----
+
+-- LSP --
+-- K -> Shows diagnostics if there is a problem and calls vim.lsp.buf.hover if there is not problem
+-- m -> Calls vim.lsp.buf.hover despite if there is a problem or not
+
+vim.keymap.set("n", "m", vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set("n", "K", function()
+  local diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
+  if #diagnostics > 0 then
+    vim.diagnostic.open_float()
+  else
+    vim.lsp.buf.hover()
+  end
+end, { noremap = true, silent = true })
+

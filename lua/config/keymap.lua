@@ -36,11 +36,12 @@ vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>")
 
 ---- Buffers End ----
 
--- LSP --
--- K -> Shows diagnostics if there is a problem and calls vim.lsp.buf.hover if there is not problem
--- m -> Calls vim.lsp.buf.hover despite if there is a problem or not
+---- LSP ----
 
+-- m -> Calls vim.lsp.buf.hover despite if there is a problem or not
 vim.keymap.set("n", "m", vim.lsp.buf.hover, { noremap = true, silent = true })
+
+-- K -> Shows diagnostics if there is a problem and calls vim.lsp.buf.hover if there is not problem
 vim.keymap.set("n", "K", function()
   local diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
   if #diagnostics > 0 then
@@ -50,3 +51,7 @@ vim.keymap.set("n", "K", function()
   end
 end, { noremap = true, silent = true })
 
+-- Jump to definition
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+
+---- LSP END ----

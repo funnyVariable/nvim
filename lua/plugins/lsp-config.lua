@@ -1,5 +1,3 @@
-local languages = {}
-
 return {
   {
     "williamboman/mason.nvim",

@@ -19,7 +19,10 @@ require("config.keymap")
 require("config.lazy")
 
 vim.cmd("NvimTreeToggle")
+
 vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
+
+vim.cmd([[autocmd VimEnter * lua vim.defer_fn(function() vim.cmd('wincmd p') end, 100)]])
 
 -- Autoclose NvimTree when quitting
 vim.api.nvim_create_autocmd("BufEnter", {

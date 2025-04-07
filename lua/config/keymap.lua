@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Tele
 
 -- Format
 vim.keymap.set("n", "<leader>r", function()
-	require("conform").format()
+  require("conform").format()
 end)
 
 -- GitSigns

@@ -1,3 +1,1 @@
-require('gitsigns').setup()
-
-vim.o.signcolumn = "yes"
+return { "lewis6991/gitsigns.nvim" }

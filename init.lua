@@ -13,5 +13,3 @@ require("config.keymap")
 
 require("config.lazy")
 
--- i don't know why but it's required for gitsigns to work
-require("gitsigns").setup()

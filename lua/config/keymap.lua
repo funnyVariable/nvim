@@ -6,6 +6,11 @@ vim.keymap.set("n", "F", function()
   require("conform").format()
 end)
 
+-- Linting
+vim.keymap.set("n", "<leader>l", function()
+  require("lint").try_lint()
+end)
+
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")
 

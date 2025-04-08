@@ -2,9 +2,7 @@ vim.keymap.set("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Tel
 vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
 
 -- Format
-vim.keymap.set("n", "F", function()
-  require("conform").format()
-end)
+vim.keymap.set("n", "F", vim.lsp.buf.format)
 
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")
@@ -64,3 +62,6 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Quit
 vim.keymap.set('n', '<leader>q', ':q<CR>:q<CR>')
+
+-- Toggle NvimTree
+vim.keymap.set('n', '<leader>t', '<CMD>NvimTreeToggle<CR>')

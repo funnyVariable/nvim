@@ -24,13 +24,3 @@ vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
 
 vim.cmd([[autocmd VimEnter * lua vim.defer_fn(function() vim.cmd('wincmd p') end, 100)]])
 
--- Autoclose NvimTree when quitting
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.bo[vim.api.nvim_get_current_buf()].filetype == "NvimTree" then
-      vim.cmd("quit")
-    end
-  end
-})

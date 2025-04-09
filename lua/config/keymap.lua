@@ -1,5 +1,16 @@
-vim.keymap.set("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files({
+    hidden = true,
+    find_command = {
+      "rg",
+      "--files",
+      "--hidden",
+      "--glob",
+      "!.git/*",
+    },
+  })
+end)
+vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- Format
 vim.keymap.set("n", "F", function()
@@ -62,13 +73,13 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 ---- LSP END ----
 
 -- Navigate split view
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Quit
-vim.keymap.set('n', '<leader>q', ':q<CR>:q<CR>')
+vim.keymap.set("n", "<leader>q", ":q<CR>:q<CR>")
 
 -- Toggle NvimTree
-vim.keymap.set('n', '<leader>t', '<CMD>NvimTreeToggle<CR>')
+vim.keymap.set("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")

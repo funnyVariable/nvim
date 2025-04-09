@@ -27,6 +27,7 @@ end)
 
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")
+vim.keymap.set("n", "<leader>G", "<Cmd>Gitsigns reset_hunk<CR>")
 
 ---- Buffers ----
 

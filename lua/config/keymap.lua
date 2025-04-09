@@ -70,7 +70,8 @@ vim.keymap.set("n", "m", function()
   end
 end)
 
--- K -> Shows diagnostics if there is a problem and calls vim.lsp.buf.hover if there is not problem
+-- K -> Shows diagnostics if there is a problem and
+-- calls vim.lsp.buf.hover if there is not problem
 vim.keymap.set("n", "K", function()
   local diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
   if #diagnostics > 0 then

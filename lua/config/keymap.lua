@@ -1,3 +1,4 @@
+-- Telescope find files
 vim.keymap.set("n", "<leader>ff", function()
   require("telescope.builtin").find_files({
     hidden = true,
@@ -10,6 +11,8 @@ vim.keymap.set("n", "<leader>ff", function()
     },
   })
 end)
+
+-- Telescope live grep
 vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- Format
@@ -79,7 +82,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Quit
-vim.keymap.set("n", "<leader>q", ":q<CR>:q<CR>")
+vim.keymap.set("n", "<leader>q", ":qall<CR>")
 
 -- Toggle NvimTree
 vim.keymap.set("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")

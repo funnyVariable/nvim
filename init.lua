@@ -22,4 +22,22 @@ vim.cmd("NvimTreeToggle")
 
 vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
 
-vim.cmd([[autocmd VimEnter * lua vim.defer_fn(function() vim.cmd('wincmd p') end, 100)]])
+vim.cmd([[autocmd VimEnter * lua vim.defer_fn(function() vim.cmd('wincmd p') end, 50)]])
+
+-- Switch themes
+vim.api.nvim_create_user_command("Dark", function()
+  vim.o.background = "dark"
+  require("vscode").setup({
+    style = "dark",
+  })
+  require("vscode").load()
+end, {})
+
+vim.api.nvim_create_user_command("Light", function()
+  vim.o.background = "light"
+  require("vscode").setup({
+    style = "light",
+  })
+  require("vscode").load()
+  vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
+end, {})

@@ -31,7 +31,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
 
 -- Move the cursor to the right when opening a text file
-vim.cmd([[autocmd VimEnter * lua vim.defer_fn(function() vim.cmd('wincmd p') end, 50)]])
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.schedule(function()
+      require("nvim-tree.api").tree.open()
+      vim.cmd("wincmd p")
+    end)
+  end,
+})
 
 -- Switch themes
 vim.api.nvim_create_user_command("Dark", function()

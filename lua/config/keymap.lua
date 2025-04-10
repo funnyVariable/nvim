@@ -58,21 +58,21 @@ vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>")
 
 ---- LSP ----
 
--- m -> Calls vim.lsp.buf.hover despite if there is a problem or not
 -- it also jumps to given line number if it was prefixed by a number
-vim.keymap.set("n", "m", function()
+vim.keymap.set("n", "n", function()
   local current_pos = vim.api.nvim_win_get_cursor(0)
   local col = current_pos[2]
 
   if vim.v.count > 0 then
     vim.api.nvim_win_set_cursor(0, { vim.v.count, col })
-  else
-    vim.lsp.buf.hover()
   end
 end)
 
 -- K -> Shows diagnostics if there is a problem and
 -- calls vim.lsp.buf.hover if there is not problem
+
+-- <leader>k Calls vim.lsp.buf.hover despite there is problem or not
+
 vim.keymap.set("n", "K", function()
   local diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
   if #diagnostics > 0 then
@@ -80,6 +80,10 @@ vim.keymap.set("n", "K", function()
   else
     vim.lsp.buf.hover()
   end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>k", function()
+  vim.lsp.buf.hover()
 end, { noremap = true, silent = true })
 
 -- Jump to definition

@@ -26,6 +26,7 @@ vim.keymap.set("n", "<leader>l", function()
 end)
 
 -- Comment
+-- <C-/> is interpreted as <C-_>
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 

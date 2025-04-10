@@ -25,6 +25,10 @@ vim.keymap.set("n", "<leader>l", function()
   require("lint").try_lint()
 end)
 
+-- Comment
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
+vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
+
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")
 vim.keymap.set("n", "<leader>G", "<Cmd>Gitsigns reset_hunk<CR>")

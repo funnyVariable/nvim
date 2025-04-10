@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- Format
 vim.keymap.set("n", "F", function()
-  require("conform").format()
+ lua require("conform").format({ async = true }) 
 end)
 
 -- Linting

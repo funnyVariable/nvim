@@ -30,7 +30,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 -- Edit NvimTree background color
-vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
+vim.cmd([[
+highlight NvimTreeNormal guibg=#f2f2f2
+highlight NvimTreeOpenedFolderName guibg=#E5E5E5
+]])
 
 -- Move the cursor to the right when opening a text file
 vim.api.nvim_create_autocmd("VimEnter", {

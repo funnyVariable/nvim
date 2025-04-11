@@ -15,9 +15,12 @@ end)
 -- Telescope live grep
 vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
+-- Rename refrences
+vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
+
 -- Format
 vim.keymap.set("n", "F", function()
- require("conform").format({ async = true }) 
+  require("conform").format({ async = true })
 end)
 
 -- Linting

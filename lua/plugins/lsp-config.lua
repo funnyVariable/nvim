@@ -14,7 +14,8 @@ return {
           "ts_ls",
           "html",
           "cssls",
-        }
+          "tailwindcss",
+        },
       })
     end,
   },
@@ -23,7 +24,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -39,6 +40,7 @@ return {
       require("lspconfig").ts_ls.setup({ capabilities = capabilities })
       require("lspconfig").html.setup({ capabilities = capabilities })
       require("lspconfig").cssls.setup({ capabilities = capabilities })
+      require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
     end,
   },
 }

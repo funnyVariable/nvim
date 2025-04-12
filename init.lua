@@ -86,3 +86,10 @@ vim.api.nvim_create_user_command("Light", function()
   vim.cmd([[highlight NvimTreeNormal guibg=#f2f2f2]])
   set_ibl_colors(true)
 end, {})
+
+vim.diagnostic.config({
+  update_in_insert = true, -- update while typing
+  virtual_text = true,
+  signs = true,
+  underline = true,
+})

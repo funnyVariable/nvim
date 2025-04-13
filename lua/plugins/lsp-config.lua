@@ -37,7 +37,10 @@ return {
         },
       })
 
-      require("lspconfig").ts_ls.setup({ capabilities = capabilities })
+      require("lspconfig").ts_ls.setup({
+        capabilities = capabilities,
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+      })
       require("lspconfig").html.setup({ capabilities = capabilities })
       require("lspconfig").cssls.setup({ capabilities = capabilities })
       require("lspconfig").tailwindcss.setup({ capabilities = capabilities })

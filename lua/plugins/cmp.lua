@@ -32,10 +32,7 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
-          ["<C-p>"] = cmp.mapping(function(fallback) -- Exclude C-p from keymaps
-            local keys = vim.api.nvim_replace_termcodes('<C-o>"+p', true, false, true)
-            vim.api.nvim_feedkeys(keys, "n", false)
-          end),
+          ["<C-p>"] = cmp.config.disable, -- Exclude C-p
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },

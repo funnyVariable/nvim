@@ -60,9 +60,8 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 
 -- Paste yanked text in insert mode
 vim.keymap.set("i", "<C-p>", function()
-  local register = vim.fn.getreg('"')
-  local escaped = vim.api.nvim_replace_termcodes(register, true, false, true)
-  vim.api.nvim_put({ escaped }, "c", false, true)
+  local yanked = vim.fn.getreg('"')
+  vim.api.nvim_put({ yanked }, "c", false, true)
 end, { noremap = true })
 
 -- Navigation in insert mode

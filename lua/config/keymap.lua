@@ -43,8 +43,9 @@ vim.keymap.set("i", "<C-_>", "<C-c>gcci", { remap = true, silent = true })
 -- Search for word under cursor
 vim.keymap.set("n", "<leader>/", function()
   local word = vim.fn.expand("<cword>")
-  vim.cmd("/" .. word .. "\\c", "n", false)
-end)
+  vim.fn.setreg("/", word .. "\\c")
+  vim.o.hlsearch = true
+end, { desc = "Highlight word under cursor (no scroll)" })
 
 -- Search (case-insensitive)
 vim.keymap.set("n", "/", "/\\c<Left><Left>", { silent = true })

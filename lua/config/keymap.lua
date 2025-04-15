@@ -37,6 +37,10 @@ vim.keymap.set("v", "E", "%")
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 
+-- Moving lines
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+
 -- Navigation in insert mode
 vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true })
@@ -54,8 +58,8 @@ vim.keymap.set("n", "<A-h>", "<Cmd>BufferPrevious<CR>")
 vim.keymap.set("n", "<A-l>", "<Cmd>BufferNext<CR>")
 
 -- Re-order to previous/next
-vim.keymap.set("n", "<A-j>", "<Cmd>BufferMovePrevious<CR>")
-vim.keymap.set("n", "<A-k>", "<Cmd>BufferMoveNext<CR>")
+vim.keymap.set("n", "<A-a>", "<Cmd>BufferMovePrevious<CR>")
+vim.keymap.set("n", "<A-d>", "<Cmd>BufferMoveNext<CR>")
 
 -- Goto buffer in position...
 vim.keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>")

@@ -28,16 +28,20 @@ vim.keymap.set("n", "<leader>l", function()
   require("lint").try_lint()
 end)
 
+-- Mapping % to E for easier access
+vim.keymap.set("n", "E", "%")
+vim.keymap.set("v", "E", "%")
+
 -- Comment
 -- <C-/> is interpreted as <C-_>
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 
 -- Navigation in insert mode
-vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")

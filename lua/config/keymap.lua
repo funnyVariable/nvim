@@ -36,10 +36,34 @@ vim.keymap.set("v", "E", "%")
 -- <C-/> is interpreted as <C-_>
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
+vim.keymap.set("i", "<C-_>", "<C-c>gcci", { remap = true, silent = true })
+
+--- Search ---
+
+-- Search for word under cursor
+vim.keymap.set("n", "<leader>/", function()
+  local word = vim.fn.expand("<cword>")
+  vim.api.nvim_feedkeys("/" .. word .. "\\c", "n", false)
+end)
+
+-- Search (case-insensitive)
+vim.keymap.set("n", "/", "/\\c<Left><Left>", { silent = true })
+
+-- Clear search highlight
+vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
+
+--- Search end ---
 
 -- Moving lines
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+
+-- Paste yanked text in insert mode
+vim.keymap.set("i", "<C-p>", function()
+  local register = vim.fn.getreg('"')
+  local escaped = vim.api.nvim_replace_termcodes(register, true, false, true)
+  vim.api.nvim_put({ escaped }, "c", false, true)
+end, { noremap = true })
 
 -- Navigation in insert mode
 vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true, silent = true })

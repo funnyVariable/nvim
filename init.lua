@@ -5,7 +5,6 @@ vim.o.background = "light"
 
 vim.o.sessionoptions = "buffers,curdir,tabpages,winsize,help,globals,skiprtp,localoptions"
 
-vim.cmd("set foldmethod=syntax")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")

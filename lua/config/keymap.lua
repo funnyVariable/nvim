@@ -43,7 +43,7 @@ vim.keymap.set("i", "<C-_>", "<C-c>gcci", { remap = true, silent = true })
 -- Search for word under cursor
 vim.keymap.set("n", "<leader>/", function()
   local word = vim.fn.expand("<cword>")
-  vim.api.nvim_feedkeys("/" .. word .. "\\c", "n", false)
+  vim.cmd("/" .. word .. "\\c", "n", false)
 end)
 
 -- Search (case-insensitive)

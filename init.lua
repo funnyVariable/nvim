@@ -94,3 +94,23 @@ vim.diagnostic.config({
   signs = true,
   underline = true,
 })
+
+-- Delete current file
+vim.api.nvim_create_user_command("Del", function()
+  local buf = vim.api.nvim_get_current_buf()
+  local file = vim.api.nvim_buf_get_name(buf)
+
+  if vim.bo[buf].readonly or not vim.bo[buf].modifiable then
+    vim.notify("Cannot delete a read-only or unmodifiable buffer", vim.log.levels.WARN)
+    return
+  end
+
+  if file == "" then
+    vim.notify("No file to delete", vim.log.levels.WARN)
+    return
+  end
+
+  vim.fn.delete(file)
+  vim.cmd("bdelete!")
+  vim.notify("Deleted " .. file, vim.log.levels.INFO)
+end, {})

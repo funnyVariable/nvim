@@ -38,6 +38,9 @@ vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 vim.keymap.set("i", "<C-_>", "<C-c>gcci", { remap = true, silent = true })
 
+-- Select all
+vim.keymap.set("n", "<leader>a", "gg0v$G")
+
 --- Search ---
 
 -- Search for word under cursor

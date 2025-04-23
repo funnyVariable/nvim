@@ -68,11 +68,16 @@ vim.keymap.set("i", "<C-p>", function()
   vim.api.nvim_put({ yanked }, "c", false, true)
 end, { noremap = true })
 
--- Navigation in insert mode
+-- Navigation + undo in insert mode
 vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-e>", "<C-o>e")
+vim.keymap.set("i", "<C-b>", "<C-o>b")
+vim.keymap.set("i", "<C-w>", "<C-o>w")
+vim.keymap.set("i", "<C-u>", "<C-o>u")
 
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")

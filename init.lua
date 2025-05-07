@@ -89,7 +89,6 @@ vim.api.nvim_create_user_command("Light", function()
 end, {})
 
 vim.diagnostic.config({
-  update_in_insert = true, -- update while typing
   virtual_text = true,
   signs = true,
   underline = true,

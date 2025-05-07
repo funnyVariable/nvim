@@ -74,9 +74,8 @@ vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-e>", "<C-o>e")
-vim.keymap.set("i", "<C-b>", "<C-o>b")
-vim.keymap.set("i", "<C-w>", "<C-o>w")
+vim.keymap.set("i", "<C-b>", "<C-Left>")
+vim.keymap.set("i", "<C-w>", "<C-Right>")
 vim.keymap.set("i", "<C-u>", "<C-o>u")
 
 -- GitSigns

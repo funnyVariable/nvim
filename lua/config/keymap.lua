@@ -78,6 +78,9 @@ vim.keymap.set("i", "<C-b>", "<C-Left>")
 vim.keymap.set("i", "<C-w>", "<C-Right>")
 vim.keymap.set("i", "<C-u>", "<C-o>u")
 
+-- Registers
+vim.keymap.set("n", "gm", '"', { noremap = true })
+
 -- GitSigns
 vim.keymap.set("n", "<leader>g", "<Cmd>Gitsigns preview_hunk<CR>")
 vim.keymap.set("n", "<leader>G", "<Cmd>Gitsigns reset_hunk<CR>")

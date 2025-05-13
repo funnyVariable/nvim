@@ -149,3 +149,6 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 
 -- Toggle NvimTree
 vim.keymap.set("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
+
+-- Themery
+vim.keymap.set("n", "<C-s>", "<CMD>Themery<CR>")

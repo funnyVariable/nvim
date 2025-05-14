@@ -102,6 +102,18 @@ return {
           before = dark,
           after = setIblColorDark,
         },
+        {
+          name = "Gruvbox Material (Dark)",
+          colorscheme = "gruvbox-material",
+          before = dark,
+          after = setIblColorDark,
+        },
+        {
+          name = "Gruvbox Material (Light)",
+          colorscheme = "gruvbox-material",
+          before = light,
+          after = setIblColorDark,
+        },
       },
       livePreview = true,
     })

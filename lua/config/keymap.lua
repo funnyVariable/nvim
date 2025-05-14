@@ -28,6 +28,9 @@ vim.keymap.set("n", "<leader>l", function()
   require("lint").try_lint()
 end)
 
+-- Map : for ;
+vim.keymap.set("n", ";", ":")
+
 -- Mapping % to E for easier access
 vim.keymap.set("n", "E", "%")
 vim.keymap.set("v", "E", "%")

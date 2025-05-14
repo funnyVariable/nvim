@@ -8,11 +8,15 @@ require("ibl").setup({
   scope = { enabled = true, highlight = "IblScope", show_start = false, show_end = false },
 })
 ]]
-local vscodeDarkAfter = [[
+
+local setIblColor = [[
 vim.api.nvim_set_hl(0, "IblIndent", { fg = "#444444" })
 vim.api.nvim_set_hl(0, "IblScope", { fg = "#888888" })
 require("ibl").setup({ indent = { char = "│", highlight = "IblIndent", }, scope = { enabled = true, highlight = "IblScope", show_start = false, show_end = false, }, })
 ]]
+
+local dark = [[ vim.o.background = "dark" ]]
+local light = [[ vim.o.background = "light" ]]
 
 return {
   "zaldih/themery.nvim",
@@ -23,14 +27,32 @@ return {
         {
           name = "vscode Light",
           colorscheme = "vscode",
-          before = [[ vim.o.background = "light" ]],
+          before = light,
           after = vscodeLightAfter,
         },
         {
           name = "vscode Dark",
           colorscheme = "vscode",
-          before = [[ vim.o.background = "dark" ]],
-          after = vscodeDarkAfter,
+          before = dark,
+          after = setIblColor,
+        },
+        {
+          name = "Kanagawa dragon",
+          colorscheme = "kanagawa-dragon",
+          before = dark,
+          after = setIblColor,
+        },
+        {
+          name = "Kanagawa wave",
+          colorscheme = "kanagawa-wave",
+          before = dark,
+          after = setIblColor,
+        },
+        {
+          name = "Kanagawa lotus",
+          colorscheme = "kanagawa-lotus",
+          before = light,
+          after = setIblColor,
         },
       },
       livePreview = true,

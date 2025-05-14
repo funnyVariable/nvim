@@ -31,6 +31,11 @@ end)
 -- Map : for ;
 vim.keymap.set("n", ";", ":")
 
+-- Toggle relative line number
+vim.keymap.set("n", "<leader>r", function()
+  vim.opt.relativenumber = not vim.opt.relativenumber:get()
+end)
+
 -- Mapping % to E for easier access
 vim.keymap.set("n", "E", "%")
 vim.keymap.set("v", "E", "%")

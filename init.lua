@@ -27,23 +27,23 @@ local theme = themery.getCurrentTheme().name
 themery.setThemeByName(theme, true)
 
 -- Open NvimTree on launch
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.schedule(function()
-      require("nvim-tree.api").tree.open()
-    end)
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.schedule(function()
+--       require("nvim-tree.api").tree.open()
+--     end)
+--   end,
+-- })
 
 -- Move the cursor to the right when opening a text file
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.schedule(function()
-      require("nvim-tree.api").tree.open()
-      vim.cmd("wincmd p")
-    end)
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.schedule(function()
+--       require("nvim-tree.api").tree.open()
+--       vim.cmd("wincmd p")
+--     end)
+--   end,
+-- })
 
 vim.diagnostic.config({
   virtual_text = true,

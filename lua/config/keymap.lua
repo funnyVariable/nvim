@@ -89,6 +89,10 @@ vim.keymap.set("i", "<C-b>", "<C-Left>")
 vim.keymap.set("i", "<C-w>", "<C-Right>")
 vim.keymap.set("i", "<C-u>", "<C-o>u")
 
+-- ZZ
+vim.keymap.set("n", "L", "zz")
+vim.keymap.set("i", "<A-l>", "<C-c>zzi")
+
 -- Registers
 vim.keymap.set("n", "gm", '"', { noremap = true })
 

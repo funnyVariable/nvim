@@ -143,8 +143,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Quit + Write
-vim.keymap.set("n", "<leader>q", ":qall<CR>")
-vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>q", ":qall<CR>",{ noremap = true})
+vim.keymap.set("n", "<leader>w", ":w<CR>",{ noremap = true})
 
 -- Toggle NvimTree
 vim.keymap.set("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")

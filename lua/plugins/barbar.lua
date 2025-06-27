@@ -1,6 +1,5 @@
 return {
   "romgrk/barbar.nvim",
-  enabled = false,
   config = function()
     -- Move to previous/next
     vim.keymap.set("n", "<A-h>", "<Cmd>BufferPrevious<CR>")
